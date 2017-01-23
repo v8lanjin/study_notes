@@ -10,3 +10,8 @@
 am start -n package_name/.Acitivity_Name
 #还有一个参数 -S，可以在启动activity之前，调用forceStopPackage()方法强制停止app.
 ```
+
+```
+#关闭一个app
+adb shell am force-stop package_name
+```
