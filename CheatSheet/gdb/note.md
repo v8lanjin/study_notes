@@ -6,4 +6,7 @@
 
 //会在被debug的进程所处的窗口输出
 (gdb) call printf("%s", x)
+
+//输出数组
+(gdb) p *array@len
 ```
