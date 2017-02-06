@@ -16,6 +16,6 @@ Preference -> Key Binding
 			{ "key": "following_text", "operator": "regex_contains", "operand": "^[)\\]\\>\\'\\\"]", "match_all": true }
 		]
 	},
-	{ "keys": ["ctrl+shift+f"], "command": "reindent", "args": {"single_line": false}}
+	{ "keys": ["ctrl+shift+i"], "command": "reindent", "args": {"single_line": false}}
 ]
 ```
