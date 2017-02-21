@@ -1,3 +1,5 @@
+### [Awesome ADB | ADB应用大全](https://github.com/mzlogin/awesome-adb)
+
 ### 使用adb来设置设备休眠时间
 ```bash
 #获取当前亮屏时间
