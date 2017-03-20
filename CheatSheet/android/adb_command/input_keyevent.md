@@ -7,5 +7,5 @@
 | Key             | Value         |
 |:---------------:|:-------------:|
 |**KEYCODE_POWER**| `26 (0x1a)`   |
-|**KEYCODE_MENU **| `82`          |
-|**KEYCODE_HOME **| `3`           |
+|**KEYCODE_MENU** | `82`          |
+|**KEYCODE_HOME** | `3`           |
