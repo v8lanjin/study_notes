@@ -11,3 +11,16 @@ printf “%05d” 10
 ``` shell
 tail -F "文件名"
 ```
+
+1. bash脚本中获取文件名或者路径  
+参考链接：http://blog.csdn.net/ljianhui/article/details/43128465
+
+```bash
+var=/dir/file.txt
+echo ${var##*/}
+file.txt
+
+echo ${var%/*}
+/dir
+```
+
