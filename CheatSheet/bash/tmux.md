@@ -2,6 +2,8 @@
 参考链接:  
 [tmux shortcuts & cheatsheet](https://gist.github.com/MohamedAlaa/2961058)  
 [十分钟学会tmux](http://www.cnblogs.com/kaiye/p/6275207.html)
+[Linux进阶01：tmux](https://higoge.github.io/2015/07/20/ad-linux01/)
+[优雅地使用命令行：Tmux 终端复用](http://harttle.com/2015/11/06/tmux-startup.htmlU)
 #### Session  
 1. 新建一个session，并设定名称
 ```
