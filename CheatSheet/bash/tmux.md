@@ -32,3 +32,88 @@ ctrl+a s
 1. 最大化/恢复当前pane  `z`
 1. 将当前分屏前后移动 `{ or }`
 
+
+#### 复制粘帖
+1. 复制 `[`
+1. 粘帖 `]`
+1. 也可以 按住 `shift` 然后用鼠标拖动来复制，然后用`shift + insert`来粘贴
+
+
+
+
+当前使用的```.tmux.conf```
+
+
+```
+# act like GNU screen
+#unbind C-b
+#set -g prefix C-a
+# improve colors
+set -g default-terminal 'screen-256color'
+#set -g default-terminal 'linux'
+# act like vim
+setw -g mode-keys vi
+#bind h select-pane -L
+#bind j select-pane -D
+#bind k select-pane -U
+#bind l select-pane -R
+#bind-key -r C-h select-window -t :-
+#bind-key -r C-l select-window -t :+
+# 重新调整窗格的大小
+bind K resizep -U 5
+bind J resizep -D 5
+bind-key L switch-client -l
+#bind-key -n L switch-client -l
+#开启window事件提示
+setw -g monitor-activity on
+#set -g visual-activity on
+## 鼠标设置，不要打开，不然用鼠标选择不了内容
+set -g mouse-utf8 on
+set -g mouse on
+#setw -g mode-mouse off
+#set -g mouse-select-pane off
+#set -g mouse-resize-pane off
+#set -g mouse-select-window off
+# start window numbers at 1 to match keyboard order with tmux window order
+set -g base-index 1
+set-window-option -g pane-base-index 1
+# remove administrative debris (session name, hostname, time) in status bar
+#set -g status-left ''
+#set -g status-right ''
+# increase scrollback lines
+set -g history-limit 10000
+# switch to last pane
+bind-key C-a last-pane
+# bind a reload key
+bind R source-file ~/.tmux.conf \; display-message "Config reloaded.."
+##### 状态栏设置
+# colors
+# soften status bar color from harsh green to light gray
+set -g status-bg black
+set -g status-fg white
+# 状态栏中的窗口列表居中
+set -g status-justify centre
+# 状态栏启用utf-8
+set -g status-utf8 on
+#设置窗口列表颜色
+#setw -g window-status-fg cyan
+#setw -g window-status-bg default
+#setw -g window-status-attr dim
+#设置当前窗口在status bar中的颜色
+setw -g window-status-current-fg white
+setw -g window-status-current-bg red
+setw -g window-status-current-attr bright
+# spot at left
+set-option -g status-left '#[bg=black,fg=green][#[fg=cyan]#S#[fg=green]]'
+set-option -g status-left-length 20
+# window list
+setw -g automatic-rename on
+#set-window-option -g window-status-format '#[dim]#I:#[default]#W#[fg=grey,dim]'
+#set-window-option -g window-status-current-format '#[fg=cyan,bold]#I#[fg=blue]:#[fg=cyan]#W#[fg=dim]'
+# spot at right
+set -g status-right '#[fg=green][#[fg=cyan]%Y-%m-%d#[fg=green]]'
+
+set -g prefix 'C-\'
+
+set-window-option -g  xterm-keys on
+
