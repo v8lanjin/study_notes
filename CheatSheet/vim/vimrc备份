@@ -1,0 +1,206 @@
+set nocompatible               " be iMproved
+ filetype off                   " required!
+
+ set rtp+=~/.vim/bundle/vundle/
+ call vundle#rc()
+
+ " let Vundle manage Vundle
+ " required! 
+
+ " My Bundles here:
+ "
+ " original repos on github
+ Bundle 'tpope/vim-fugitive'
+ Bundle 'Lokaltog/vim-easymotion'
+ Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
+ Bundle 'tpope/vim-rails.git'
+ " vim-scripts repos
+ " non github repos
+ Bundle 'git://git.wincent.com/command-t.git'
+ " git repos on your local machine (ie. when working on your own plugin)
+"" Bundle 'file:///Users/gmarik/path/to/plugin'
+ " ...
+
+ filetype plugin indent on     " required!
+ "
+ " Brief help
+ " :BundleList          - list configured bundles
+ " :BundleInstall(!)    - install(update) bundles
+ " :BundleSearch(!) foo - search(or refresh cache first) for foo
+ " :BundleClean(!)      - confirm(or auto-approve) removal of unused bundles
+ "
+ " see :h vundle for more details or wiki for FAQ
+ " NOTE: comments after Bundle command are not allowed..
+
+
+"插件
+Bundle 'gmarik/vundle'
+Bundle 'AutoComplPop'
+Bundle 'The-NERD-tree'
+Bundle 'Tagbar'
+Bundle 'minibufexpl.vim'
+Bundle 'molokai'
+Bundle 'ZenCoding.vim'
+Bundle 'L9'
+Bundle 'FuzzyFinder'
+Bundle 'WebAPI.vim'
+Bundle 'Gist.vim'
+Bundle 'Yggdroot/indentLine'
+Bundle 'scrooloose/nerdcommenter'
+Bundle 'Raimondi/delimitMate' 
+Bundle 'Lokaltog/vim-powerline'
+"Bundle 'Valloric/YouCompleteMe'
+Bundle 'vim-scripts/DrawIt'
+Bundle 'vim-scripts/Conque-Shell'
+
+"Markdown plugins
+"Bundle 'godlygeek/tabular'
+"Bundle 'plasticboy/vim-markdown'
+"vim有一个状态栏 加上powline则有两个状态栏
+set laststatus=2
+set t_Co=256
+let g:Powline_symbols='fancy'
+
+filetype plugin indent on " required!
+"autocomplpop 设置
+"let g:AutoComplPop_IgnoreCaseOption=1
+set ignorecase
+"let g:acp_behaviorKeywordCommand="\<C-x>\<C-o>"
+"搜索高亮
+set hlsearch
+"设置NERDTreetagbar的宽度
+let g:NERDTreeWinSize = 20
+let g:tagbar_width=20
+"颜色主题设置
+set t_Co=256
+colorscheme molokai
+"zencoding 设置
+let g:user_zen_expandabbr_key='<S-O>'
+let g:use_zen_complete_tag = 1
+"Gist设置
+let g:gist_detect_filetype = 1
+let g:gist_clip_command = 'xclip -selection clipboard'
+"查找手册
+autocmd FileType php set keywordprg=~/.vim/phpman
+autocmd FileType js,css,html set keywordprg=~/.vim/man
+map <F2> <S-K><CR>
+map! <F2> <Esc><S-K><CR>a
+"快速生成tag文件
+map <F3> :! ctags -R<CR>
+map! <F3> <Esc>:! ctags -R<CR>
+"快捷键设置
+map <F10> :NERDTreeToggle<CR>
+map! <F10> <Esc>:NERDTreeToggle<CR>
+map <F12> :TagbarToggle<CR>
+map! <F12> <Esc>:TagbarToggle<CR>
+map <F9> :ConqueTermSplit bash<CR>
+map! <F9> <Esc>:q<CR>
+
+"map <F6> :AcpDisable<CR>
+"map! <F6> <Esc>:AcpDisable<CR>a
+"快速查找文件
+map <C-P> :FufCoverageFile<CR>
+map! <C-P> :FufCoverageFile<CR>
+"快速关闭
+map <S-Q> :q<CR>:q<CR>:q<CR>:q<CR>
+"映射复制、粘贴、剪贴ctrl+c ctrl+v ctrl+x
+"map <C-V> "+pa<Esc>
+map! <C-V> <Esc>"+pa
+map <C-C> "+y
+map <C-X> "+x
+" 映射全选 ctrl+a
+map <C-A> ggVG
+map! <C-A> <Esc>ggVG
+"ctrl+s为保存
+map <C-S> :w<CR>
+map! <C-S> <Esc>:w<CR>a
+"ctrl+z撤销
+map <C-Z> :u<CR>
+map! <C-Z> <Esc>:u<CR>a
+"双击时高亮
+map <2-LeftMouse> *
+map! <2-LeftMouse> <c-o>*
+"ctrl+鼠标左键跳转
+map <C-LeftMouse> <C-]>
+map! <C-LeftMouse> <Esc><C-]>
+"光标设在为竖线
+autocmd InsertEnter * silent execute "!gconftool-2 --type string --set /apps/gnome-terminal/profiles/Default/cursor_shape ibeam"
+autocmd InsertLeave * silent execute "!gconftool-2 --type string --set /apps/gnome-terminal/profiles/Default/cursor_shape block"
+autocmd VimLeave * silent execute "!gconftool-2 --type string --set /apps/gnome-terminal/profiles/Default/cursor_shape ibeam"
+"支持鼠标
+set mouse=a
+"显示行数
+set nu
+" 每个tab换成4个空格
+set expandtab
+" 多行缩进
+map <Tab> >
+map <S-Tab> <
+"基本设置
+set encoding=utf-8
+set fileencoding=utf-8
+"set fileencodings=ucs-bom,utf-8,chinese
+set fileencodings=utf-8,chinese
+set ambiwidth=double
+set ts=4
+set sw=4
+set wrap "自动换行
+"设置无备份
+set nobackup
+set nowritebackup
+
+"设置缩进分割符
+set list lcs=tab:\|\ 
+set cuc
+
+"设置语法高亮
+syntax on
+
+set backspace=indent,eol,start  "solve the bug : Backspace key won't move from current line"
+
+
+
+" 自动补全配置
+set completeopt=longest,menu
+"让Vim的补全菜单行为与一般IDE一致(参考VimTip1228)
+autocmd InsertLeave * if pumvisible() == 0|pclose|endif
+"离开插入模式后自动关闭预览窗口
+inoremap <expr> <CR>       pumvisible() ? "\<C-y>" : "\<CR>"
+"回车即选中当前项
+"上下左右键的行为 会显示其他信息
+inoremap <expr> <Down>     pumvisible() ? "\<C-n>" : "\<Down>"
+inoremap <expr> <Up>       pumvisible() ? "\<C-p>" : "\<Up>"
+inoremap <expr> <PageDown> pumvisible() ? "\<PageDown>\<C-p>\<C-n>" : "\<PageDown>"
+inoremap <expr> <PageUp>   pumvisible() ? "\<PageUp>\<C-p>\<C-n>" : "\<PageUp>"
+
+"youcompleteme  默认tab  s-tab 和自动补全冲突
+"let g:ycm_key_list_select_completion=['<c-n>']
+let g:ycm_key_list_select_completion = ['<Down>']
+"let g:ycm_key_list_previous_completion=['<c-p>']
+let g:ycm_key_list_previous_completion = ['<Up>']
+let g:ycm_confirm_extra_conf=0 "关闭加载.ycm_extra_conf.py提示
+
+let g:ycm_collect_identifiers_from_tags_files=1	" 开启 YCM 基于标签引擎
+let g:ycm_min_num_of_chars_for_completion=2	"
+" 从第2个键入字符就开始罗列匹配项
+let g:ycm_cache_omnifunc=0	" 禁止缓存匹配项,每次都重新生成匹配项
+let g:ycm_seed_identifiers_with_syntax=1	" 语法关键字补全
+nnoremap <F5> :YcmForceCompileAndDiagnostics<CR>	"force recomile with syntastic
+"nnoremap <leader>lo :lopen<CR>	"open locationlist
+"nnoremap <leader>lc :lclose<CR>	"close locationlist
+inoremap <leader><leader> <C-x><C-o>
+"在注释输入中也能补全
+let g:ycm_complete_in_comments = 1
+"在字符串输入中也能补全
+let g:ycm_complete_in_strings = 1
+"注释和字符串中的文字也会被收入补全
+let g:ycm_collect_identifiers_from_comments_and_strings = 0
+"nnoremap <leader>jd :YcmCompleter GoToDefinitionElseDeclaration<CR> "跳转到定义处
+let g:ycm_global_ycm_extra_conf = '/home/lanjin/.vim/bundle/YouCompleteMe/cpp/ycm/.ycm_extra_conf.py'
+nnoremap <leader>jd :YcmCompleter GoToDefinitionElseDeclaration<CR>
+
+
+set foldmethod=syntax "按照语法高亮来折叠代码, 其实就是按照代码中的一些括号来定义折叠位置, 比如: "{ }", "/* */" 
+set foldlevel=100  " 启动vim时不要自动折叠代码
+
+:imap jj <Esc>

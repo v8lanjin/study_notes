@@ -11,11 +11,14 @@ xkbcomp $DISPLAY output.xkb #得到当前的xkb键盘配置
 xkbcomp output.xkb $DISPLAY #使配置生效
 ```
 我的修改：  
-+ CAPS Lock -> modifier 
-+ hjkl -> 左下上边
-+ u/i -> home/end
-+ q -> shift
-+ 右ctrl -> caps lock
+
+|按键      | 映射到   |
+|----      | -----    |
+|CAPS Lock | modifier |
+|hjkl      | 左下上边 |
+|u/i       | home/end |
+|q         | shift    |
+|右ctrl    | caps lock|
 
 ```
 $ diff -Naur pc-bak pc

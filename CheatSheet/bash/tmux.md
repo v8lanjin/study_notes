@@ -1,6 +1,7 @@
 ### Tmux的常用命令
 参考链接:  
 [tmux shortcuts & cheatsheet](https://gist.github.com/MohamedAlaa/2961058)  
+[十分钟学会tmux](http://www.cnblogs.com/kaiye/p/6275207.html)
 #### Session  
 1. 新建一个session，并设定名称
 ```
@@ -27,4 +28,7 @@ ctrl+a s
 #### 分屏  
 1. 水平分屏 `"`
 1. 垂直分屏 `%`
+1. 关闭当前分屏 `x`
 1. 最大化/恢复当前pane  `z`
+1. 将当前分屏前后移动 `{ or }`
+
