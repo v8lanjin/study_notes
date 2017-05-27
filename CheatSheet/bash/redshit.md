@@ -13,6 +13,7 @@ redshift -l 23.0:120.6 -t 5500:4500 -g 0.9 -m vidmode -o -O $gamma
 
 
 1. 双屏幕：
+
 ```
 xrand #可以得到当前系统里面所有的显示器
 Screen 0: minimum 320 x 200, current 3840 x 1200, maximum 8192 x 8192
