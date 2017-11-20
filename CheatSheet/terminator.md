@@ -7,8 +7,8 @@
 #原始配色为
 #1a1a1a:#f4005f:#98e024:#fa8419:#9d65ff:#f4005f:#58d1eb:#c4c5b5:#625e4c:#f4005f:#98e024:#e0d561:#9d65ff:#f4005f:#58d1eb:#f6f6ef
 
-#我将其中黄色也修改为了橘黄色，结果为
-#1a1a1a:#f4005f:#98e024:#fa8419:#9d65ff:#f4005f:#58d1eb:#c4c5b5:#625e4c:#f4005f:#98e024:#fa8419:#9d65ff:#f4005f:#58d1eb:#f6f6ef
+#我将其中黄色也修改为了橘黄色，深粉红色改为了淡粉红色，结果为
+#1a1a1a:#f4005f:#98e024:#fa8419:#9d65ff:#f4005f:#58d1eb:#c4c5b5:#625e4c:#f4005f:#98e024:#fa8419:#9d65ff:#f7649d:#58d1eb:#f6f6ef
 
 ```
 1.3 背景透明，不透明度为91%
@@ -45,7 +45,7 @@
     background_image = None
     background_type = transparent
     foreground_color = "#c7c9c9"
-    palette = "#1a1a1a:#f4005f:#98e024:#fa8419:#9d65ff:#f4005f:#58d1eb:#c4c5b5:#625e4c:#f4005f:#98e024:#fa8419:#9d65ff:#f4005f:#58d1eb:#f6f6ef"
+    palette = "#1a1a1a:#f4005f:#98e024:#fa8419:#9d65ff:#f4005f:#58d1eb:#c4c5b5:#625e4c:#f4005f:#98e024:#fa8419:#9d65ff:#f7649d:#58d1eb:#f6f6ef"
     scrollback_infinite = True
     show_titlebar = False
     urgent_bell = True
