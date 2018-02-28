@@ -40,7 +40,18 @@ ctrl+a s
 1. 粘帖 `]`
 1. 也可以 按住 `shift` 然后用鼠标拖动来复制，然后用`shift + insert`来粘贴
 
+#### 有时候错误的复制了很多文字后然后粘帖之后会发现tmux下面有乱码
+应该是粘帖的内容包含让tmux修改当前窗口名称的操作，导致名称被修改为超长的内容
+解决方法：重新命名有问题的窗口
+ctrl + prefix ","  ctrl+u
+[参考链接](https://unix.stackexchange.com/questions/49886/tmux-status-bar-corrupted-after-catting-a-binary-file-how-to-reset)
 
+
+####tmux打开很久之后，有时会发现鼠标滚轮会在tmux输入乱码
+这个是Mouse-utf-8造成的，关闭即可
+`set -g mouse-utf8 off`
+`tmux set mouse-utf8 off`
+[参考链接](https://superuser.com/questions/417027/why-are-random-characters-inserted-into-my-tmux-session)
 
 
 当前使用的```.tmux.conf```
@@ -118,4 +129,4 @@ set -g status-right '#[fg=green][#[fg=cyan]%Y-%m-%d#[fg=green]]'
 set -g prefix 'C-\'
 
 set-window-option -g  xterm-keys on
-
+```
